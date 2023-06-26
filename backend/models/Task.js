@@ -17,7 +17,7 @@ const taskSchema = mongoose.Schema (
 
         toCompleteBy: {
             type: String,
-            enum: ["Avant la fin de la journée", "Avant la fin de la semaine", "Avant la fin du mois"]
+            type: String
         },
 
         isCompleted: {

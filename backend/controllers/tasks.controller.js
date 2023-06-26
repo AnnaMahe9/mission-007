@@ -1,6 +1,7 @@
 const TaskModel = require('../models/Task');
 
 module.exports.getTasks = async (req, res) => {
+    console.log("Réception d'un appel get au tasks")
     const tasks = await TaskModel.find();
     res.status(200).json(tasks)
 };
@@ -31,6 +32,7 @@ module.exports.editTask = async (req, res) => {
 
 module.exports.deleteTask = async (req, res) => {
     const task = await TaskModel.findById(req.params.id);
+    console.log(task)
     if (!task) {
         res.status(400).json({ message: "Cette tâche n'existe pas" });
     }
